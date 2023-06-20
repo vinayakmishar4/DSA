@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Q8 
+{
+    static void sreach(int arr[],int i,int element)
+    {
+       if(arr.length<0)
+       {
+         System.out.println("Element is not Found");
+       }
+       if(arr[i]==element)
+       {
+          System.out.println("Element is Found");
+       }
+       sreach(arr, i-1, element);
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+       System.out.println("Enter the size of Array");
+       int n=sc.nextInt();
+       int arr[]=new int[n];
+       System.out.println("Enter the elements of Array");
+       for(int i=0;i<n;i++)
+       {
+          
+           arr[i]=sc.nextInt();
+       }
+       System.out.println("Array:- ");
+       int li=arr.length-1;
+       for(int i=0;i<arr.length;i++)
+       {
+          System.out.println(arr[i]);
+       }
+       System.out.println("Enter the element to be searched");
+       int element=sc.nextInt();
+       sreach(arr, li, element);
+    }    
+}
