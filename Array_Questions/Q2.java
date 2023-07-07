@@ -7,15 +7,12 @@ public class Q2
 {
   public int singleNumber(int[] nums) 
     {
-       if(nums.length==0)
+       int xor = 0;
+       for(int num:nums)
        {
-          return 0;
+         xor ^= num;
        }
-       if(nums.length==1)
-       {
-          return nums[0];
-       }
-       Arrays.sort(nums);  
+       return xor;
     }
     public static void main(String[] args) 
     {
